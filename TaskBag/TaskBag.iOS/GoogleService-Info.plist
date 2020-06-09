@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>303441558350-lbvqc97ftibjfs4cgf3ffbb72o5trf4u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.303441558350-lbvqc97ftibjfs4cgf3ffbb72o5trf4u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>303441558350-b0rujv2qgqnguoct8cgpktv9rqcu6ken.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCjcFl7Ha-0BrZVG0MVhr1obqnJMctwiJM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>303441558350</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.companyname.TaskBag</string>
+	<key>PROJECT_ID</key>
+	<string>taskbag-261717</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taskbag-261717.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:303441558350:ios:0ff1fd31a0cae19690fc1f</string>
+	<key>DATABASE_URL</key>
+	<string>https://taskbag-261717.firebaseio.com</string>
+</dict>
+</plist>

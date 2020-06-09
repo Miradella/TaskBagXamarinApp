@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TaskBag.NotePage" Title="Введите заметку">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Сохранить" Clicked="SaveNote"
+                 IconImageSource="icon_save.png"
+                 Order="Primary"
+                 Priority="0" />
+        <ToolbarItem Text="Удалить"  Clicked="DeleteNote"  
+                 IconImageSource="icon_delete.png"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Entry Text="{Binding Note_Name}" Placeholder="Название" />
+        <Editor Text="{Binding Text}" Placeholder="Описание" AutoSize="TextChanges" />
+
+    </StackLayout>
+
+</ContentPage>

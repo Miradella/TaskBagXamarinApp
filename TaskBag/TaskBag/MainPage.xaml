@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TaskBag.MainPage">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Добавить" Clicked="CreateNote" 
+                 IconImageSource="icon_plus.png"
+                 Order="Primary"
+                 Priority="0" />
+        <ToolbarItem Text="Вход"  Clicked="Auth" 
+                 Order="Secondary"
+                 Priority="0" />
+        <ToolbarItem Text="Определение геолокации"  Clicked="Geolacation" 
+                 Order="Secondary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+
+
+        <ListView x:Name="noteslist" ItemsSource="{Binding}" ItemSelected="OnItemSelected" RowHeight="60" Margin="5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical" >
+                                <Label Text="{Binding Note_Name}" FontSize="Medium" />
+                                <Label Text="{Binding Text}" FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>
