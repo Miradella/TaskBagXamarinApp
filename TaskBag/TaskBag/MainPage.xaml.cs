@@ -50,7 +50,7 @@ namespace TaskBag
         {
             //geolocationXaml geolocation = new geolocationXaml();
             //await Navigation.PushAsync(geolocation);
-            //await Navigation.PushAsync(new AuthPage());
+            await Navigation.PushAsync(new Geolocation());
         }
     }
 }

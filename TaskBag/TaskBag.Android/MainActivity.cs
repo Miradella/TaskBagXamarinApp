@@ -8,7 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Firebase;
 
-
+using Android;
 namespace TaskBag.Droid
 {
     [Activity(Label = "TaskBag", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -24,6 +24,7 @@ namespace TaskBag.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
             FirebaseApp.InitializeApp(Android.App.Application.Context);
             LoadApplication(new App());
         }
@@ -38,11 +39,48 @@ namespace TaskBag.Droid
         //    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
         //    LoadApplication(new App());
         //}
+
+        const int RequestLocationId = 0;
+
+        readonly string[] LocationPermissions =
+        {
+            Manifest.Permission.AccessCoarseLocation,
+            Manifest.Permission.AccessFineLocation
+        };
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+            if (requestCode == RequestLocationId)
+            {
+                if ((grantResults.Length == 1) && (grantResults[0] == (int)Permission.Granted))
+                {
+                    Console.WriteLine("Location permissions granted.");
+                }
+                else
+                {
+                    Console.WriteLine("Location permissions denied.");
+                }
+            }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            if ((int)Build.VERSION.SdkInt >= 23)
+            {
+                if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
+                {
+                    RequestPermissions(LocationPermissions, RequestLocationId);
+                }
+                else
+                {
+                    Console.WriteLine("Location permissions already granted.");
+                }
+            }
+        }
+
+       
     }
 }

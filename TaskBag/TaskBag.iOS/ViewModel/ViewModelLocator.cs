@@ -1,20 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
+using Foundation;
+using UIKit;
 
-using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using CommonServiceLocator;
 
-namespace TaskBag.ViewModel
+namespace TaskBag.iOS.ViewModel
 {
-    public class ViewModelLocator
+    class ViewModelLocator
     {
+        /// <summary>
+        /// Initializes a new instance of the ViewModelLocator class.
+        /// </summary>
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
 
-			SimpleIoc.Default.Register<MainViewModel>();
-			
+            SimpleIoc.Default.Register<MainViewModel>();
         }
 
         public MainViewModel Main
@@ -24,7 +32,7 @@ namespace TaskBag.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
         public static void Cleanup()
         {
         }
