@@ -9,7 +9,7 @@
         <StackLayout>
             <Entry              
                 x:Name="Email" Text="{Binding Email}" Placeholder="Email" 
-                HorizontalOptions="CenterAndExpand" >
+                 >
             </Entry>
             <Entry
                 x:Name="Password" Text ="{Binding Password}" Placeholder="Password" IsPassword="true" >
