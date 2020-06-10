@@ -16,7 +16,7 @@ namespace TaskBag.Views
         {
             InitializeComponent();
 
-            BindingContext = new AuthPageViewModel();
+            BindingContext = new AuthPageViewModel();  
         }
     }
 }

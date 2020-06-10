@@ -15,7 +15,8 @@ namespace TaskBag.Views
     {
         public Geolocation()
         {
-            InitializeComponent();  
+            InitializeComponent();    
         }
+
     }
 }
