@@ -17,6 +17,10 @@ namespace TaskBag
         public MainPage()
         {
             InitializeComponent();
+            AddTooolbar.Text = Resource.AddToolbar;
+            AuthTooolbar.Text = Resource.AuthTooolbar;
+            GeoTooolbar.Text = Resource.GeoTooolbar;
+
         }
         protected override void OnAppearing()
         {

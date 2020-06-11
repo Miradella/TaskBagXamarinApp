@@ -22,52 +22,11 @@ namespace TaskBag.Views
     {
         int count;
         bool tracking;
-        Plugin.Geolocator.Abstractions.Position savedPosition;
-        GeolocationPoint geolocationPoint = new GeolocationPoint();
-        Plugin.Geolocator.Abstractions.Position oldPoint = new Plugin.Geolocator.Abstractions.Position( 0,0);
-        //public static ILocationUpdateService LocationUpdateService;
         public ObservableCollection<Plugin.Geolocator.Abstractions.Position> Positions { get; } = new ObservableCollection<Plugin.Geolocator.Abstractions.Position>();
         public Geolocation()
         {
             InitializeComponent();
-            
-            /*double z = 0;
-            var timer = new System.Timers.Timer();
-            timer.Interval = 1000;
-            timer.Start();
-            timer.Elapsed += (sender, args) =>
-            {
-                timer.Enabled = false;
-                Position position = new Position(App.location.Latitude+z,App.location.Longitude+z);
-                Pin pin = new Pin
-                {
-                    Label = "Santa Cruz",
-                    Address = "The city with a boardwalk",
-                    Type = PinType.Place,
-                    Position = position
-                };
-                map.Pins.Add(pin);
-                //setPoint();
-                timer.Enabled = true;
-            };
-            var timer = new System.Timers.Timer();
-                timer.Interval = 1000;
-                timer.Start();
-                timer.Elapsed += (sender, args) =>
-                {
-                    timer.Enabled = false;
-                    Position position = new Position(X++, -122.0194722);
-                    Pin pin = new Pin
-                    {
-                        Label = "Santa Cruz",
-                        Address = "The city with a boardwalk",
-                        Type = PinType.Place,
-                        Position = position
-                    };
-                    map.Pins.Add(pin);
-                    //setPoint();
-                    timer.Enabled = true;
-                }; */
+            Tracking.Text = Resource.Tracking;
         }
         private async void ButtonTrack_Clicked(object sender, EventArgs e)
         {
@@ -91,8 +50,6 @@ namespace TaskBag.Views
                 if (CrossGeolocator.Current.IsListening)
                 {
                     await CrossGeolocator.Current.StopListeningAsync();
-                    //labelGPSTrack.Text = "Stopped tracking";
-                   // ButtonTrack.Text = "Start Tracking";
                     tracking = false;
                     count = 0;
                 }
@@ -113,6 +70,7 @@ namespace TaskBag.Views
                     {
                         //labelGPSTrack.Text = "Started tracking";
                         //ButtonTrack.Text = "Stop Tracking";
+
                         tracking = true;
                     }
                 }
@@ -138,10 +96,6 @@ namespace TaskBag.Views
                 var position = e.Position;
                 Positions.Add(position);
                 count++;
-                /*  LabelCount.Text = $"{count} updates";
-                  labelGPSTrack.Text = string.Format("Time: {0} \nLat: {1} \nLong: {2} \nAltitude: {3} \nAltitude Accuracy: {4} \nAccuracy: {5} \nHeading: {6} \nSpeed: {7}",
-                      position.Timestamp, position.Latitude, position.Longitude,
-                      position.Altitude, position.AltitudeAccuracy, position.Accuracy, position.Heading, position.Speed);*/
                 if (isFirst)
                 {
                     oldposition = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude);
@@ -163,41 +117,8 @@ namespace TaskBag.Views
                 }
             });
         }
-        /*private void LocationUpdateService_LocationChanged(object sender, ILocationEventArgs e)
-        {
-            //Here you can get the user's location from "e" -> new Location(e.Latitude, e.Longitude);
-            //new Location is from Xamarin.Essentials Location object.
-            Location l= new Location(e.Latitude, e.Longitude);
-            Position position = new Position(l.Latitude+z, l.Longitude+z);
-           // z += 1;
-            Pin pin = new Pin
-            {
-                Label = "Santa Cruz",
-                Address = "The city with a boardwalk",
-                Type = PinType.Place,
-                Position = position
-            };
-
-            map.Pins.Add(pin);
-        } */
-        double z = 0;
-   /*     private async void setPoint()
-        {
-            geolocationPoint.Geolacation();
-            //if (geolocationPoint.isNew())
-            //{
-                Position newP = new Position(geolocationPoint.GetPoint().x+z, geolocationPoint.GetPoint().y+z);
-                z += 10;
-                Polyline polyline = new Polyline
-                {
-                    StrokeColor = Color.Red,
-                    StrokeWidth = 12,
-                    Geopath = { oldPoint, newP }
-                };
-                map.MapElements.Add(polyline);
-                oldPoint = newP;
-            //}
-        }*/
+       
+   
 
     }
 }

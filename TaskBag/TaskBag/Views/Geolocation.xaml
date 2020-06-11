@@ -5,10 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
-             x:Class="TaskBag.Views.Geolocation" Title="Geolocation">
+             x:Class="TaskBag.Views.Geolocation" >
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem Text="Start tracking" Clicked="ButtonTrack_Clicked" 
+        <ToolbarItem x:Name="Tracking" Clicked="ButtonTrack_Clicked" 
                  Order="Primary"
                  Priority="0" />
     </ContentPage.ToolbarItems>

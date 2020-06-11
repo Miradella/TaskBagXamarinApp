@@ -16,6 +16,7 @@ namespace TaskBag.Views
         {
             InitializeComponent();
             BindingContext = new GreetingPageViewModel();
+            Congratulations.Text = Resource.Congratulations;
         }
     }
 }

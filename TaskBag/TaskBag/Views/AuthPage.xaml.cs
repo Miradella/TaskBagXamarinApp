@@ -16,7 +16,12 @@ namespace TaskBag.Views
         {
             InitializeComponent();
 
-            BindingContext = new AuthPageViewModel();  
+            BindingContext = new AuthPageViewModel();
+            Email.Placeholder = Resource.Email;
+            Password.Placeholder = Resource.Password;
+            btnLogin.Text = Resource.btnLogin;
+            btnSignup.Text = Resource.btnSignup;
+            this.Title = Resource.AuthTooolbar;
         }
     }
 }

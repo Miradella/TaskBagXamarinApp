@@ -15,6 +15,10 @@ namespace TaskBag
         public NotePage()
         {
             InitializeComponent();
+            SaveToolbar.Text = Resource.SaveToolbar;
+            DeleteToolbar.Text = Resource.DeleteToolbar;
+            Title.Placeholder = Resource.Title;
+            Description.Placeholder = Resource.Description;
         }
         private void SaveNote(object sender, EventArgs e)
         {

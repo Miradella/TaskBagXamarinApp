@@ -8,14 +8,14 @@
 
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem Text="Добавить" Clicked="CreateNote" 
+        <ToolbarItem x:Name="AddTooolbar" Clicked="CreateNote" 
                  IconImageSource="icon_plus.png"
                  Order="Primary"
                  Priority="0" />
-        <ToolbarItem Text="Вход"  Clicked="Auth" 
+        <ToolbarItem  x:Name="AuthTooolbar"  Clicked="Auth" 
                  Order="Secondary"
                  Priority="0" />
-        <ToolbarItem Text="Определение геолокации"  Clicked="Geolacation" 
+        <ToolbarItem x:Name="GeoTooolbar"  Clicked="Geolacation" 
                  Order="Secondary"
                  Priority="0" />
     </ContentPage.ToolbarItems>
