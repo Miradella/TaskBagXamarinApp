@@ -9,6 +9,9 @@ using Android.OS;
 using Firebase;
 
 using Android;
+using Plugin.Geolocator;
+using Plugin.CurrentActivity;
+
 namespace TaskBag.Droid
 {
     [Activity(Label = "TaskBag", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -26,6 +29,8 @@ namespace TaskBag.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.FormsMaps.Init(this, bundle);
             FirebaseApp.InitializeApp(Android.App.Application.Context);
+            Xamarin.Essentials.Platform.Init(this, bundle); 
+            CrossCurrentActivity.Current.Init(this, bundle);
             LoadApplication(new App());
         }
         //protected override void OnCreate(Bundle savedInstanceState)

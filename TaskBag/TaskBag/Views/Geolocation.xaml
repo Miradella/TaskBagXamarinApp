@@ -6,9 +6,14 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
              x:Class="TaskBag.Views.Geolocation" Title="Geolocation">
-    <ContentPage.Content>
-        <StackLayout>
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Start tracking" Clicked="ButtonTrack_Clicked" 
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
             <maps:Map x:Name="map" IsShowingUser="True" />
+            
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>
