@@ -17,8 +17,9 @@ namespace TaskBag
             InitializeComponent();
             SaveToolbar.Text = Resource.SaveToolbar;
             DeleteToolbar.Text = Resource.DeleteToolbar;
-            Title.Placeholder = Resource.Title;
+            Titletext.Placeholder = Resource.Title;
             Description.Placeholder = Resource.Description;
+            this.Title = Resource.Notepage;
         }
         private void SaveNote(object sender, EventArgs e)
         {

@@ -144,6 +144,9 @@
   <data name="GeoTooolbar" xml:space="preserve">
     <value>Geolocation</value>
   </data>
+  <data name="Notepage" xml:space="preserve">
+    <value>Write note</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>

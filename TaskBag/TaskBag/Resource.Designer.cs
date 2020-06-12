@@ -142,6 +142,15 @@ namespace TaskBag {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Write note.
+        /// </summary>
+        internal static string Notepage {
+            get {
+                return ResourceManager.GetString("Notepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Password.
         /// </summary>
         internal static string Password {

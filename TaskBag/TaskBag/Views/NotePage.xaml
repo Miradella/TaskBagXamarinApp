@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TaskBag.NotePage" Title="Введите заметку">
+             x:Class="TaskBag.NotePage" >
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="SaveToolbar"  Clicked="SaveNote"
                  IconImageSource="icon_save.png"
@@ -16,7 +16,7 @@
                  Priority="0" />
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <Entry x:Name="Title" Text="{Binding Note_Name}"  />
+        <Entry x:Name="Titletext" Text="{Binding Note_Name}"  />
         <Editor x:Name="Description" Text="{Binding Text}" AutoSize="TextChanges" />
 
     </StackLayout>
